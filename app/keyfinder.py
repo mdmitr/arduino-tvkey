@@ -27,12 +27,12 @@ def send_command(command, end=''):
   arduino.write(str.encode(cmd_seq))
 
 def process_sequence(key1, key2, key3, key4, seq_no, force = False):
-  name = str(key1) + str(key2) + str(key3) + str(key4) + '.jpg'
+  name = "images/" + str(key1) + str(key2) + str(key3) + str(key4) + '.jpg'
   if force is False:
     if (os.path.isfile(name)):
       return False
 
-  print(name)
+  print(name + " : ", end='', flush=True)
 
   if force == True or seq_no % 2 == 0:
     send_command('p') # wake up
