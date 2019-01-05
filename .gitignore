@@ -1,2 +1,4 @@
 app/*.jpg
+app/images
 /app/.ipynb_checkpoints
+
